@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-const bitCounts = 32 << (^uint(0) >> 63) // 32位平台这个值就是32，64位平台这个值就是64
+//const bitCounts = 32 << (^uint(0) >> 63) // 32位平台这个值就是32，64位平台这个值就是64
 // 这是一个包含非负整数的集合
 // 零值代表空的集合
 type IntSet struct {
@@ -142,27 +142,29 @@ func (s *IntSet) Copy() *IntSet {
 func main() {
 	fmt.Println("你的机器是32 or 64?", bitCounts)
 	set1 := IntSet{}
-	set1.Add(1)
-	set1.Add(3)
-	set1.Add(99)
-	fmt.Println("测试 Add && Has函数\n", set1.Has(3))
-	fmt.Println(set1.Has(1))
-	fmt.Println(set1.Has(98))
+	set1.Add(999999999999)
+
+	//set1.Add(1)
+	//set1.Add(3)
+	//set1.Add(99)
+	//fmt.Println("测试 Add && Has函数\n", set1.Has(3))
+	//fmt.Println(set1.Has(1))
+	//fmt.Println(set1.Has(98))
 	fmt.Println("测试String\n", set1.String())
-
-	set2 := IntSet{}
-	set2.Add(4)
-	set2.Add(3)
-	set2.Add(99)
-	set2.Add(199)
-	fmt.Println("测试并集")
-	set1.UnionWith(set2)
-	fmt.Println(set1.String())
-
-	set2.Remove(199)
-	fmt.Println("测试Remove\n", set2.String())
-	fmt.Println("测试Elem\n", set2.Elem())
-	for _, v := range set2.Elem() {
-		fmt.Println(v)
-	}
+	//
+	//set2 := IntSet{}
+	//set2.Add(4)
+	//set2.Add(3)
+	//set2.Add(99)
+	//set2.Add(199)
+	//fmt.Println("测试并集")
+	//set1.UnionWith(set2)
+	//fmt.Println(set1.String())
+	//
+	//set2.Remove(199)
+	//fmt.Println("测试Remove\n", set2.String())
+	//fmt.Println("测试Elem\n", set2.Elem())
+	//for _, v := range set2.Elem() {
+	//	fmt.Println(v)
+	//}
 }
